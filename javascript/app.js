@@ -1,27 +1,23 @@
 // The core of the challenge is to create a tool which randomly creates pairings for a table tennis tournament bracket from a list of names collected from the user.
 
-// Some optional advanced features might include:
+// NOTES: Sections needed for --- 
+// add player - Adding player to a list (input + buttons)
+// make team - adding player to team (button needed)
 
-// ability to record scores for each player, or mark which player won from each pairing, to create the next round of the tournament playoffs
-
-// Functionality
- 
-// need to be able to add players to an list/array, randomize them and put them in pairs.
-// record scores for each player, see who's won. (first to 21)
-// the total number of players needs to be a power of 2 (i.e. 4, 8, 16, 32 ...)
 
 ((document) => {
 
-    console.log(document);
+    // console.log(document);
+    // console.log("Hello!");
 
     // setting variables 
-    let button = document.getElementById("add") // adding player
+    let plusButton = document.getElementById("plusbutton") // adding player
     let input = document.getElementById("player") // input field for player to be added 
     let ul = document.getElementById("list") // list where 'input' AKA players will display 
-    let makeButton = document.getElementById("make-button") // button for making a team :) 
+    let makeButton = document.getElementById("makebutton") // button for making a team :) 
     let team = document.getElementById("random-list") // this is the final list where teams are displayed 
     
-    // refactoting variables, as not specfic enough 
+    // editing variables --- as not specfic enough below
     // let buttonTournament = document.getElementById("tournament")
     // let random = document.getElementById("random");
     // let button = document.getElementbyID("winners")
@@ -30,81 +26,54 @@
     // let pairing = [];
     // let store = []; 
     
-    // -- adding event listener -- adds player name 
-    button.addEventListener ("click", () => {
-    let input = document.getElementById("player")
+    // ADDING PLAYER NAME 
 
-        if (input.value.length == 0) {   // setting to stop user entering an empty string 
+    const list = []; 
+
+    plusButton.addEventListener ("click", () => {
+
+        if (input.value.length == 0) {   // setting to stop user = entering an empty string -- keep this?? 
             alert("Please enter a player name");
-       
-        } else {
-            
-        // takes name and puts it into list 
-            store.push(input.value);
-            console.log(store);
-            
-            let listAdd = document.createElement("li");                 // Create a <li> node
-            let textnode = document.createTextNode(input.value);         // Create a text node
-            listAdd.appendChild(textnode);                              // Append the text to <li>
-            document.getElementById("player-list").append(listAdd);     // Append <li> to <ul> with id="myList"
-            input.value = "";
-            count++; 
-            }
-    
+        }  
+
+        let li = document.createElement("li"); // Adds input to list 
+        li.textContent = input.value; // what user has typed
+
+        // console.log(li.textContent);
+        li.classList.add("list-group");// plus?
+        ul.prepend(li);
+        
+        list.push (input.value)
+        input.value = ""; 
+
+        console.log(list);
+
+        return list;
+         
     });
-            // generate random pairs tournament 
-    //         button.addEventListener ("click", (e) => {
-    //         let buttonTournament = document.getElementById("tournament")
-    //         // let 
 
-            // Generate pairs randomly
-            random.addEventListener("click", (e) => {
-            let x = 2;  // we need x2 people!
-            let randomName = []; // names fed into array 
-            let temp = store; 
-            
-            if (store.length % 2 == 1) { // if user submits odd number -- u get a pop up msg
-                alert("The submitted players' number must be even");
-                
-            } else {
+//     // "MAKE TEAMS" -- need to Array() method sort here
+//    // https://www.w3schools.com/jsref/jsref_sort.asp <-- for ref
+//    //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random <-- need this also somewhere 
 
-                for (let i = 0; i < store.length; i += 2) { 
-    
-                    // Choose 2 random players
-                    randomItem = temp.sort(() => Math.random() - Math.random()).slice(0, n);
-    
-                    // Add 2 paired players to the finalPairing array
-                    finalPairing.push(randomItem);
-    
-                    // Store the rest of players except the 2 previously paired players
-                    temp = temp.filter(v => !randomItem.includes(v));
-                }
-    
-            }
-    
-            // Put paired players into the list
-            for (let j = 0; j < finalPairing.length; j++) {
-    
-                let item = d.createElement("li");
-                item.append("Pairing: " + finalPairing[j][0] + " vs " + finalPairing[j][1]);
-                d.getElementById("list-pairs").append(item);
-            }
-    
-        });
-    
-        // Generate the winners randomly
-        winner.addEventListener("click", () => {
-    
-            for (let i = 0; i < finalPairing.length; i++) {
-    
-                // Choose 1 random player from the finalPairing array
-                winner = finalPairing[i][Math.floor(Math.random()*finalPairing[i].length)];
-    
-                let item = d.createElement("li");
-                item.append(winner);
-                d.getElementById("list-win").append(item)
-            }
-    
-        });
-    
+//     makebutton.addEventListener ("click", () => { // adding EL 
+
+//        let names = list;  // names = list
+//        names.sort(() => 0.5 - Math.random()); // randomize names
+//        let bracket = []; // put pairs go into empty array
+
+//        // - can we use 'while' loop here? - poss if/else?
+//        while (names.length >= 2) {
+//            let bracket = `${names.pop}()} ${"VS."} ${names.pop()}`
+          
+//            bracket.push(bracket); // pushes bracker/pair created 
+
+//            let lastlist = docment.createElement('p')
+//            lastlist.text = bracket; 
+//            lastlist.classList.add("list-group")
+//            ul.prepend(lastlist)
+//        }
+
+//     });
+   
 })(document);
