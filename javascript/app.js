@@ -15,15 +15,20 @@
     console.log(document);
 
     // setting variables 
-    let button = document.getElementById("add")
-    let buttonTournament = document.getElementById("tournament")
-    let input = document.getElementById("player")
-    let container = document.getElementById("container");
+    let button = document.getElementById("add") // adding player
+    let input = document.getElementById("player") // input field for player to be added 
+    let ul = document.getElementById("list") // list where 'input' AKA players will display 
+    let makeButton = document.getElementById("make-button") // button for making a team :) 
+    let team = document.getElementById("random-list") // this is the final list where teams are displayed 
+    
+    // refactoting variables, as not specfic enough 
+    // let buttonTournament = document.getElementById("tournament")
+    // let random = document.getElementById("random");
     // let button = document.getElementbyID("winners")
-    let count = 0; 
+    // let count = 0; 
     // let array = [];
-    let pairing = [];
-    let store = []; 
+    // let pairing = [];
+    // let store = []; 
     
     // -- adding event listener -- adds player name 
     button.addEventListener ("click", () => {
@@ -51,9 +56,55 @@
     //         button.addEventListener ("click", (e) => {
     //         let buttonTournament = document.getElementById("tournament")
     //         // let 
+
+            // Generate pairs randomly
+            random.addEventListener("click", (e) => {
+            let x = 2;  // we need x2 people!
+            let randomName = []; // names fed into array 
+            let temp = store; 
+            
+            if (store.length % 2 == 1) { // if user submits odd number -- u get a pop up msg
+                alert("The submitted players' number must be even");
+                
+            } else {
+
+                for (let i = 0; i < store.length; i += 2) { 
     
-    // });
+                    // Choose 2 random players
+                    randomItem = temp.sort(() => Math.random() - Math.random()).slice(0, n);
     
+                    // Add 2 paired players to the finalPairing array
+                    finalPairing.push(randomItem);
     
+                    // Store the rest of players except the 2 previously paired players
+                    temp = temp.filter(v => !randomItem.includes(v));
+                }
+    
+            }
+    
+            // Put paired players into the list
+            for (let j = 0; j < finalPairing.length; j++) {
+    
+                let item = d.createElement("li");
+                item.append("Pairing: " + finalPairing[j][0] + " vs " + finalPairing[j][1]);
+                d.getElementById("list-pairs").append(item);
+            }
+    
+        });
+    
+        // Generate the winners randomly
+        winner.addEventListener("click", () => {
+    
+            for (let i = 0; i < finalPairing.length; i++) {
+    
+                // Choose 1 random player from the finalPairing array
+                winner = finalPairing[i][Math.floor(Math.random()*finalPairing[i].length)];
+    
+                let item = d.createElement("li");
+                item.append(winner);
+                d.getElementById("list-win").append(item)
+            }
+    
+        });
     
 })(document);
