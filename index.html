@@ -9,31 +9,43 @@
 </head>
 <body>
     <header>
-        <div class="header-title">
+        <!-- <div class="header-title"> -->
             <h1>PING PONG PARTY</h1>
-        </div>
+                <p>For all your game pairing needs..🏓</p>
+        <!-- </div> -->
     </header>
-            <article class="player-input">
-                <p>Welcome! To get started please enter player name. You'll need a minimum of 4 players and the total number of players must be a power of 2 e.g. 4, 8, 16</p>
-                <label class="enter-nametext">Add Player</label>
-                <input type="text" id="player"
+            <div class="container">
+                <article class="card-container">
+                    <p>Welcome! To get started please enter player name. You'll need a minimum of 4 players and the total number of players must be a power of 2 e.g. 4, 8, 16</p>
+                </div>
+
+                <!-- <div class="container-grid">
+                    <form class="form-add"> -->
+
+                        <section class="add--player">
+                <h3 class="add-cotainer">Add a Player</h3>
+                <input 
+                type="text" 
+                id="player"
                 class="player-fill"
-                placeholder="Lottie J" 
+                placeholder="Enter player name" 
                />
                 <button class="button" id="plusbutton"
                 >Add</button>
-            </article>     
+           </section>
 
-            <article class="display">
+            <section class="display">
                 <div class="name-display">
                     <ul class="list-group" id="list">
+
+
                         <button class=button id="makebutton">Create</button>
                     </ul>
                 </div>
-            </article>
+            </div>
+        </article>
 
 
-            <article class="teams">
                 <div class="show-teams">
                     <p class="random-list" id="random-list">
 
