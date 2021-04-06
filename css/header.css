@@ -1,0 +1,21 @@
+header { 
+    /* background-color: #CD656D; */
+    color: whitesmoke;
+    text-align: center;
+    padding: 30px;
+    border-radius: 50px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: large;
+    font-weight: 700;
+ }
+
+ h1 {
+     color: black;
+     font-weight: 700;
+     font-style: oblique;
+ }
+
+small {
+     color: black;
+     font-style: oblique; 
+ }

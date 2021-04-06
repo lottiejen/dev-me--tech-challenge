@@ -1,4 +1,2 @@
-h1 {
-    color: blue;
-    border: red 2px; 
-}
+@import 'header.css';
+@import 'background.css'
