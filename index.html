@@ -4,46 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ping Pong Party</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/style.css">
     <script defer src="javascript/app.js"></script>
 </head>
 <body>
     <header>
         <!-- <div class="header-title"> -->
             <h1>PING PONG PARTY</h1>
-            <small className="header__subtitle">For all you pairing needs..</small>
+            <small className="header__subtitle">Welcome! To get started please enter player name. You'll need a minimum of 4 players and the total number of players must be a power of 2 e.g. 4, 8, 16</small>
         <!-- </div> -->
     </header>
-            <!-- <div class="intro"> -->
-                <article class="card-container">
-                    <p>Welcome! To get started please enter player name. You'll need a minimum of 4 players and the total number of players must be a power of 2 e.g. 4, 8, 16</p>
-                </div>
-            </article>
-
-                <!-- <div class="container-grid">
-                    <form class="form-add"> -->
 
             <article class="add-player">
                 <h3 class="add-container">Add a Player🏓</h3>
                 <input class="player-fill"
                 type="text" 
                 id="player"
+                maxlength="30"
                 placeholder="You know you want to..." 
                />
                 <button class="button" id="plusbutton"
-                >ADD</button>
+                >Add</button>
            </article>
 
 <!-- ADDED PLAYERS -->
             <article class="display">
                 <div class="name-display">
-                    <h3 class="players">Added Players:</h3>
+                    <h3 class="players">Who's Playing?🏓</h3>
                     <ul class="list-group" id="list">
                 </article>
 
 <!-- Create Pairs -->              
                     <!-- <section class="create"> -->
-                        <button class="button button2" id="makebutton">✨PAIR ME UP✨</button>
+                        <button class="button button2" id="makebutton">✨PAIR ME UP!✨</button>
                     </ul>
                 </div>
             </div>
