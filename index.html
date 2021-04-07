@@ -11,42 +11,48 @@
     <header>
         <!-- <div class="header-title"> -->
             <h1>PING PONG PARTY</h1>
-                <p>For all your game pairing needs..🏓</p>
+            <small className="header__subtitle">For all you pairing needs..</small>
         <!-- </div> -->
     </header>
-            <div class="container">
+            <!-- <div class="intro"> -->
                 <article class="card-container">
                     <p>Welcome! To get started please enter player name. You'll need a minimum of 4 players and the total number of players must be a power of 2 e.g. 4, 8, 16</p>
                 </div>
+            </article>
 
                 <!-- <div class="container-grid">
                     <form class="form-add"> -->
 
-                        <section class="add--player">
-                <h3 class="add-cotainer">Add a Player</h3>
-                <input 
+            <article class="add-player">
+                <h3 class="add-container">Add a Player🏓</h3>
+                <input class="player-fill"
                 type="text" 
                 id="player"
-                class="player-fill"
                 placeholder="Enter player name" 
                />
                 <button class="button" id="plusbutton"
                 >Add</button>
-           </section>
+           </article>
 
-            <section class="display">
+<!-- ADDED PLAYERS -->
+            <article class="display">
                 <div class="name-display">
+                    <h3 class="players">Added Players</h3>
                     <ul class="list-group" id="list">
+                </article>
 
-
-                        <button class=button id="makebutton">Create</button>
+<!-- Create Pairs -->              
+                    <section class="create"></section>
+                        <button class="button button2" id="makebutton">Create</button>
                     </ul>
                 </div>
             </div>
-        </article>
+        <!-- </article> -->
 
 
+ <!-- Show Teams -->        
                 <div class="show-teams">
+                    <h2 class=final-pairs>Your Pairs Are:</h2>
                     <p class="random-list" id="random-list">
 
                     </p>
