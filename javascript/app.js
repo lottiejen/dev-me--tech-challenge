@@ -8,10 +8,12 @@
     // setting variables 
     let plusButton = document.getElementById("plusbutton") // adding player
     let input = document.getElementById("player") // input field for player to be added 
-    // let inputError = document.getElementById("input-error")
     let ul = document.getElementById("list") // list where 'input' AKA players will display 
     let makeButton = document.getElementById("makebutton") // button for making a team
     let team = document.getElementById("random-list") // this is the final list where teams are displayed 
+    // const PowerOfTwo = (x) => {
+    //     return x >= 4 && Math.log2(x) % 1 === 0;
+    // }
     
   
     // ADDING PLAYER NAME 
@@ -27,7 +29,6 @@
         if (name.length == "" ) {   // setting to stop user entering an empty string 
             alert("please enter a player name")
 
-
         }  
 
         else {
@@ -36,9 +37,7 @@
             li.textContent = input.value; // what user has typed
             li.classList.add("list-group"); // add to list
             // ul.prepend(li);
-            ul.append(li); // append 
-    
-            
+            ul.append(li); // append      
     
             // pushes list item created
             list.push(input.value)
@@ -60,36 +59,60 @@
 
        let names = list;  // names = list
        let partners = []; // feed into empty array
-
        
-    //    names.sort(() => 0.5 - Math.random()); // randomize names
-    // Fisher-Yates Array randomizer 
 
-     names.sort(() => Math.random() - Math.random()); // this seems to do  
+       if (names.length % 2 === 0 && names.length > 0 && names.length !== 2 ) {
+             names.sort(() => Math.random() - Math.random());
+        
+        while (names.length >= 2) {
+            let partner = `${names.pop()} ${".VS."} ${names.pop()}` // interpolate + concat?
+            partners.push(partner); 
+        
+
+            // console.log(partner);
+            // partners.push(partner); 
+            let lastlist = document.createElement('p')
+            lastlist.textContent = partner; 
+            lastlist.classList.add("list-group")
+            //    ul.prepend(lastlist)
+            //    team.prepend(lastlist);
+            team.append(lastlist);
+        }
+    }
+
+     else {
+        alert("Please enter an even number of players and a minimum of x4 players")
+     }
+
+    //    // *NEED TO SORT THIS* // 
+    //    onClick = PowerOfTwo(list.length) ? do existing logic : alert("Please enter correct amt of ppl")
+
+        //    names.sort(() => 0.5 - Math.random()); // randomize names
+        // Fisher-Yates Array randomizer 
+
+        // names.sort(() => Math.random() - Math.random()); // this seems to do  
 
     //    names.sort(() => Math.floor(Math.random() * Math.floor(input.length)); 
        
 
         // this logic = names added need to be more than or equal to 4"
-       while (names.length >= 2) {
-           let partner = `${names.pop()} ${".VS."} ${names.pop()}` // interpolate + concat?
-          
-
+    //    while (names.length >= 2) {
+    //        let partner = `${names.pop()} ${".VS."} ${names.pop()}` // interpolate + concat?
            
         //    console.log(names.length);
 
-            // pushes partners created
-            partners.push(partner); 
+       // pushes partners created
+        // partners.push(partner); 
             
-            console.log(partner);
+        // console.log(partner);
 
-           let lastlist = document.createElement('p')
-           lastlist.textContent = partner; 
-           lastlist.classList.add("list-group")
+        //    let lastlist = document.createElement('p')
+        //    lastlist.textContent = partner; 
+        //    lastlist.classList.add("list-group")
         //    ul.prepend(lastlist)
         //    team.prepend(lastlist);
-            team.append(lastlist);
-       }
+            // team.append(lastlist);
+       
 
     });
    
