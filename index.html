@@ -1,57 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ping Pong Party 1.0</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script defer src="javascript/app.js"></script>
-</head>
-<body>
-    <header>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ping Pong Party 1.0</title>
+        <link rel="stylesheet" href="css/style.css">
+        <script defer src="javascript/app.js"></script>
+    </head>
+    <body>
+        <header>
             <h1>PING PONG PARTY 1.0</h1>
-            <small className="header__subtitle">Welcome! Please enter player names, you'll need a minimum x4 to be paired!</small>
-    </header>
-
-            <article class="add-player">
-                <h3 class="add-container">Add a Player🏓</h3>
-                <input class="player-fill"
-                    type="text" 
-                    id="player"
-                    maxlength="30"
-                    placeholder="You know you want to..." 
+            <small class="header__subtitle">Welcome! Please enter player names, you'll need a minimum x4 to be paired!</small>
+        </header>
+        <!-- Add Your Players -->    
+        <article class="add-player">
+            <h3 class="add-container">Add a Player🏓</h3>
+            <input class="player-fill"
+                type="text" 
+                id="player"
+                maxlength="30"
+                placeholder="You know you want to..." 
                 />
-                <button class="button" id="plusbutton"
+            <button class="button" id="plusbutton"
                 >Add</button>
-           </article>
-
-<!-- ADDED PLAYERS -->
-            <article class="display">
-                <div class="name-display">
-                    <h3 class="players">Who's Playing?🏓</h3>
-                    <ul class="list-group" id="list">
-                </article>
-
-<!-- Create Pairs -->              
-                    <!-- <section class="create"> -->
-                        <button class="button button2" id="makebutton">✨PAIR ME UP!✨</button>
-                    </ul>
-                </div>
+        </article>
+        <!-- Added Players -->
+        <article class="display">
+            <div class="name-display">
+                <h3 class="players">Who's Playing?🏓</h3>
+                <ul class="list-group" id="list">
             </div>
-        <!-- </section> -->
-        <!-- </article> -->
-
-
- <!-- Show Teams -->        
-                <div class="show-teams">
-                    <h2 class=final-pairs>Your Pairs Are:</h2>
-                    <p class="random-list" id="random-list">
-
-                    </p>
-                </div>
-                
-
             </article>
-
-        </body>
+        <!-- Create Pairs -->                       
+        <button class="button button2" id="makebutton"
+            >✨PAIR ME UP!✨</button>
+        </div>
+        </div>
+        <!-- Show Pairs / Partners  -->        
+        <div class="show-teams">
+            <h2 class=final-pairs>Your Pairs Are:</h2>
+            <p class="random-list" id="random-list">
+            </p>
+        </div>
+        </article>
+    </body>
 </html>
