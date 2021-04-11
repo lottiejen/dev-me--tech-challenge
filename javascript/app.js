@@ -21,7 +21,7 @@
 		} else {
 
 			let li = document.createElement("li"); // creating new list item 
-			li.textContent = input.value; // what user has typed
+			li.textContent = input.value; 
 			li.classList.add("list-group");
 			ul.append(li);
 
@@ -29,8 +29,6 @@
 			list.push(input.value)
 
 			input.value = "";
-
-			console.log(list);
 
 		}
 
@@ -58,7 +56,7 @@
 				arr[j] = temp;
 			}
 
-			//  if players more than x1 
+			//  if players are more than x1 
 			while (players.length > 1) {
 
 				const partner = `${players.pop()} ${".VS."} ${players.pop()}` // interpolate 
