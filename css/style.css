@@ -26,10 +26,10 @@ small {
 }
 
 /* TOP PARAGRAPH STYLING */
-p {
+/* p {
   color: black;
   font-family: 'Barriecito', sans-serif;
-}
+} */
 
 
 /* TITLE STYLINGS */
@@ -172,7 +172,7 @@ button:hover {
     }
 
   .add-player {
-      width: 100px;
+      width: 150px;
       margin-left: 50px;
       margin-bottom: 1rem; 
       text-align: left;
@@ -181,6 +181,7 @@ button:hover {
 
   .list-group {
     color: #ff6961;
+    width: 150%;
     font-family: 'Timmana', sans-serif;
     justify-content: center;
     flex-direction: column-reverse;
@@ -213,8 +214,7 @@ button:hover {
   }
   
   .display {
-    width: 130px;
-    min-width: 10px;
+    width: 180px;
     margin-top: 1rem;
     margin-right: 100px;
     margin-left: 50px;
@@ -224,10 +224,9 @@ button:hover {
     }
 
   .button2 {
-    min-width: 10px;
     margin-top: 1rem;
     margin-right: 100px;
-    margin-left: 50px;
+    margin-left: 80px;
     }
 
   .final-pairs {
@@ -237,7 +236,7 @@ button:hover {
     min-width: 10px;
     margin-top: 1rem;
     margin-right: 100px;
-    margin-left: 70px;
+    margin-left: 100px;
 
   }
 }
