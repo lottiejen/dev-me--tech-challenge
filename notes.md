@@ -39,7 +39,6 @@ https://color.adobe.com/mythemes
 https://loading.io/background/m-particles/
 
 
-
 const handleStart = (state) => {
   let players = state.players;
   let playerProp = state.playerProp;
@@ -53,12 +52,14 @@ const handleStart = (state) => {
   }
 }
 
-else if (input.length >= )
-else if (list.length >= 4 && Number.isInteger(Math.log2(list.length)));
-
-
-// Notes
+// Notes / Scribbles 
 
 - Need to stop string adding to array
-- Need to change logic for x4 players - Now won't shuffle if less than x4 players
-- 
+- Need to change logic for x4 players 
+
+  const powerOfTwo = (x) => {
+        return x >= 4 && Math.log2(x) % 1 === 0; ???
+    }
+
+    let partners = []
+    let newPairs = partners.map (partner => )
